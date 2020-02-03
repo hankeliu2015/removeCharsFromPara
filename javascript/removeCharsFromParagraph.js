@@ -1,14 +1,14 @@
 
-// space is not count as charactors.
+// space is not count as characters.
 // choose console log as output format
 
 // Split paragraph by space and combine chars into a string.
 // convert chars string into object, set key/value as char/occurence.
-// seperate the unique charactors and store them into an array
+// seperate the unique characters and store them into an array
 
 // apply conditions total characters length and unique chars array length on the output.
 
-// x is the all charactors and y is the unique charactors, w is the larget unique set of chararctors can be removed.
+// x is the all characters and y is the unique characters, w is the larget unique set of chararctors can be removed.
 //when x - y >= 50, all elements of w can be removed
 // when x - y < 50, (x - 50) elements of w can be removed
 
@@ -17,7 +17,7 @@ function removeCharsFromParagraoh(paragraph) {
   let totalChars = paragraph.split(' ').join('');
 
   if (totalChars.length < 50) {
-    console.log("Paragraph charactors Length is less than 50 charractors. Can not proceed.")
+    console.log("Paragraph characters Length is less than 50 charractors. Can not proceed.")
   } else {
     let charsObj = {};
     for (let i = 0; i < totalChars.length; i++) {
@@ -33,13 +33,13 @@ function removeCharsFromParagraoh(paragraph) {
     let uniqueCharsArray = charsObjKeys.filter(key => charsObj[key] === 1 )
 
     if (uniqueCharsArray.length === 0) {
-      console.log("There is no unique charactors in the paragraph.")
+      console.log("There is no unique characters in the paragraph.")
     } else {
       if (totalChars.length - uniqueCharsArray.length >= 50) {
-        console.log("Here is the larget unique Charactors can be removed:", uniqueCharsArray)
+        console.log("Here is the largest unique Charactors can be removed:", uniqueCharsArray)
       } else if (totalChars.length - uniqueCharsArray.length < 50) {
         let removeCharsCount = totalChars.length - 50;
-        console.log("Here is the larget unique Charactors can be removed:", uniqueCharsArray.slice(removeCharsCount))
+        console.log("Here is the largest unique Charactors can be removed:", uniqueCharsArray.slice(removeCharsCount))
       }
     }
   }
